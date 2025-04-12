@@ -20,8 +20,23 @@ import App from './App.vue';
 import routes from './router';
 
 // 言語ファイルのインポート
-import ja from './locales/ja';
-import en from './locales/en';
+import jaMessages from './locales/ja';
+import enMessages from './locales/en';
+
+const messages = {
+    ja: jaMessages,
+    en: enMessages
+};
+
+// i18nの設定
+const i18n = createI18n({
+    legacy: false,
+    locale: 'ja',
+    fallbackLocale: 'en',
+    messages,
+    globalInjection: true,
+    runtimeOnly: false
+});
 
 // Vuetifyの設定
 const vuetify = createVuetify({
@@ -51,36 +66,22 @@ const vuetify = createVuetify({
     },
 });
 
-// i18nの設定
-const i18n = createI18n({
-    legacy: false,
-    locale: 'ja',
-    fallbackLocale: 'en',
-    messages: {
-        ja,
-        en,
-    },
-    globalInjection: true,
-    runtimeOnly: false,
-    warnHtmlMessage: false,  // HTMLメッセージの警告を無効化
-    escapeValue: false,      // エスケープを無効化
-    silentFallbackWarn: true // フォールバック警告を無効化
-});
-
 // ルーターの設定
 const router = createRouter({
     history: createWebHistory('/ballista-app_wiki/'),
     routes,
 });
 
-// アプリケーションの作成とマウント
+// アプリケーションの作成
 const app = createApp(App);
 app.use(i18n);
 app.use(vuetify);
 app.use(router);
-app.mount('#app');
 
-// デバッグ用ログ - 本番環境でも有効
+// デバッグ用のコンソールログ
 console.log('Current locale:', i18n.global.locale);
-
+console.log('Available locales:', Object.keys(messages));
 console.log('Sample translation test:', i18n.global.t('nav.home'));
+
+// アプリをマウント
+app.mount('#app');
