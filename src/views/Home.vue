@@ -176,7 +176,7 @@ const features = [
                         <v-card-text>
                             <div class="d-flex align-center mb-4">
                                 <v-icon
-                                    icon="mdi-discord"
+                                    icon="mdi-message-text"
                                     size="32"
                                     class="mr-4"
                                     color="primary"

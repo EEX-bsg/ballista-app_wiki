@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue';
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [vue()],
-    base: './', // GitHub Pagesでの相対パスを設定
+    base: '/ballista-app_wiki/',
     build: {
         assetsInlineLimit: 0, // 小さいアセットもインライン化しない
     },
