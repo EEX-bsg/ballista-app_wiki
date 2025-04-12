@@ -61,7 +61,10 @@ const i18n = createI18n({
         en,
     },
     globalInjection: true,
-    runtimeOnly: false
+    runtimeOnly: false,
+    warnHtmlMessage: false,  // HTMLメッセージの警告を無効化
+    escapeValue: false,      // エスケープを無効化
+    silentFallbackWarn: true // フォールバック警告を無効化
 });
 
 // ルーターの設定
@@ -72,11 +75,12 @@ const router = createRouter({
 
 // アプリケーションの作成とマウント
 const app = createApp(App);
-app.use(vuetify)
-    .use(i18n)
-    .use(router);
+app.use(i18n);
+app.use(vuetify);
+app.use(router);
+app.mount('#app');
 
-// DOMContentLoadedの後にマウント
-document.addEventListener('DOMContentLoaded', () => {
-    app.mount('#app');
-});
+// デバッグ用ログ - 本番環境でも有効
+console.log('Current locale:', i18n.global.locale);
+
+console.log('Sample translation test:', i18n.global.t('nav.home'));
