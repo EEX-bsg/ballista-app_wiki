@@ -53,7 +53,7 @@ const vuetify = createVuetify({
 
 // i18nの設定
 const i18n = createI18n({
-    legacy: false,
+    legacy: true,
     locale: 'ja',
     fallbackLocale: 'en',
     messages: {
@@ -61,10 +61,8 @@ const i18n = createI18n({
         en,
     },
     globalInjection: true,
-    runtimeOnly: false,
-    warnHtmlMessage: false,  // HTMLメッセージの警告を無効化
-    escapeValue: false,      // エスケープを無効化
-    silentFallbackWarn: true // フォールバック警告を無効化
+    fallbackWarn: false,
+    missingWarn: false
 });
 
 // ルーターの設定
@@ -78,9 +76,9 @@ const app = createApp(App);
 app.use(i18n);
 app.use(vuetify);
 app.use(router);
-app.mount('#app');
 
 // デバッグ用ログ - 本番環境でも有効
 console.log('Current locale:', i18n.global.locale);
-
 console.log('Sample translation test:', i18n.global.t('nav.home'));
+
+app.mount('#app');
