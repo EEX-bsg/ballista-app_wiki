@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+# GitHub Actionsに明示的な権限を付与
+permissions:
+    contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
