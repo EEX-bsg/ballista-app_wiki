@@ -53,16 +53,14 @@ const vuetify = createVuetify({
 
 // i18nの設定
 const i18n = createI18n({
-    legacy: true,
+    legacy: false,
+    globalInjection: true,
     locale: 'ja',
     fallbackLocale: 'en',
     messages: {
         ja,
         en,
-    },
-    globalInjection: true,
-    fallbackWarn: false,
-    missingWarn: false
+    }
 });
 
 // ルーターの設定
