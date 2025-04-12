@@ -60,13 +60,23 @@ const i18n = createI18n({
         ja,
         en,
     },
+    globalInjection: true,
+    runtimeOnly: false
 });
 
 // ルーターの設定
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 });
 
 // アプリケーションの作成とマウント
-createApp(App).use(vuetify).use(i18n).use(router).mount('#app');
+const app = createApp(App);
+app.use(vuetify)
+    .use(i18n)
+    .use(router);
+
+// DOMContentLoadedの後にマウント
+document.addEventListener('DOMContentLoaded', () => {
+    app.mount('#app');
+});
