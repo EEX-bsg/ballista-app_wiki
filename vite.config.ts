@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [vue()],
     base: '/ballista-app_wiki/',
     build: {
-        assetsInlineLimit: 0, // 小さいアセットもインライン化しない
+        assetsInlineLimit: 0,
     },
     define: {
         __VUE_I18N_FULL_INSTALL__: true,

@@ -122,42 +122,44 @@ const features = [
                             sm="6"
                             md="4"
                         >
-                            <v-hover v-slot="{ isHovering, props }">
-                                <v-card
-                                    v-bind="props"
-                                    :elevation="isHovering ? 8 : 2"
-                                    :class="{ 'on-hover': isHovering }"
-                                    class="feature-card h-100"
-                                >
-                                    <v-card-item>
-                                        <v-avatar
-                                            class="mb-4"
-                                            color="primary"
-                                            size="64"
-                                            rounded
-                                        >
-                                            <v-icon
-                                                :icon="feature.icon"
-                                                size="36"
-                                                color="white"
-                                            ></v-icon>
-                                        </v-avatar>
-                                        <v-card-title class="text-h6">
-                                            {{
-                                                t(
-                                                    `home.features.${feature.key}.title`
-                                                )
-                                            }}
-                                        </v-card-title>
-                                        <v-card-text>
-                                            {{
-                                                t(
-                                                    `home.features.${feature.key}.description`
-                                                )
-                                            }}
-                                        </v-card-text>
-                                    </v-card-item>
-                                </v-card>
+                            <v-hover>
+                                <template v-slot="{ isHovering, props }">
+                                    <v-card
+                                        v-bind="props"
+                                        :elevation="isHovering ? 8 : 2"
+                                        :class="{ 'on-hover': isHovering }"
+                                        class="feature-card h-100"
+                                    >
+                                        <v-card-item>
+                                            <v-avatar
+                                                class="mb-4"
+                                                color="primary"
+                                                size="64"
+                                                rounded
+                                            >
+                                                <v-icon
+                                                    :icon="feature.icon"
+                                                    size="36"
+                                                    color="white"
+                                                ></v-icon>
+                                            </v-avatar>
+                                            <v-card-title class="text-h6">
+                                                {{
+                                                    t(
+                                                        `home.features.${feature.key}.title`
+                                                    )
+                                                }}
+                                            </v-card-title>
+                                            <v-card-text>
+                                                {{
+                                                    t(
+                                                        `home.features.${feature.key}.description`
+                                                    )
+                                                }}
+                                            </v-card-text>
+                                        </v-card-item>
+                                    </v-card>
+                                </template>
                             </v-hover>
                         </v-col>
                     </v-row>
