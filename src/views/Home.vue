@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
 import DefaultLayout from '../layouts/DefaultLayout.vue';
-
-const { t } = useI18n();
 
 const features = [
     {
@@ -43,10 +40,10 @@ const features = [
                     style="min-height: 500px"
                 >
                     <h1 class="text-h2 font-weight-bold text-white mb-4">
-                        {{ t('home.hero.title') }}
+                        {{ $t('home.hero.title') }}
                     </h1>
                     <p class="text-h6 text-white mb-8">
-                        {{ t('home.hero.subtitle') }}
+                        {{ $t('home.hero.subtitle') }}
                     </p>
                     <v-btn
                         color="primary"
@@ -54,7 +51,7 @@ const features = [
                         variant="elevated"
                         href="#about"
                     >
-                        {{ t('home.hero.cta') }}
+                        {{ $t('home.hero.cta') }}
                     </v-btn>
                 </div>
             </div>
@@ -65,12 +62,12 @@ const features = [
             <v-row justify="center">
                 <v-col cols="12" md="10" lg="8">
                     <h2 class="text-h4 text-center section-title">
-                        {{ t('home.about.title') }}
+                        {{ $t('home.about.title') }}
                     </h2>
                     <v-card class="bg-surface">
                         <v-card-text>
                             <p class="text-body-1 mb-4">
-                                {{ t('home.about.description') }}
+                                {{ $t('home.about.description') }}
                             </p>
                             <v-divider class="my-4"></v-divider>
                             <div class="d-flex flex-wrap justify-space-between">
@@ -80,7 +77,7 @@ const features = [
                                         class="mr-2"
                                         color="primary"
                                     ></v-icon>
-                                    <span>{{ t('home.about.developer') }}</span>
+                                    <span>{{ $t('home.about.developer') }}</span>
                                 </div>
                                 <div class="pa-2">
                                     <v-icon
@@ -88,7 +85,7 @@ const features = [
                                         class="mr-2"
                                         color="primary"
                                     ></v-icon>
-                                    <span>{{ t('home.about.status') }}</span>
+                                    <span>{{ $t('home.about.status') }}</span>
                                 </div>
                                 <div class="pa-2">
                                     <v-icon
@@ -97,7 +94,7 @@ const features = [
                                         color="primary"
                                     ></v-icon>
                                     <span>{{
-                                        t('home.about.releaseDate')
+                                        $t('home.about.releaseDate')
                                     }}</span>
                                 </div>
                             </div>
@@ -112,7 +109,7 @@ const features = [
             <v-row justify="center">
                 <v-col cols="12" md="10">
                     <h2 class="text-h4 text-center section-title">
-                        {{ t('home.features.title') }}
+                        {{ $t('home.features.title') }}
                     </h2>
                     <v-row>
                         <v-col
@@ -145,14 +142,14 @@ const features = [
                                             </v-avatar>
                                             <v-card-title class="text-h6">
                                                 {{
-                                                    t(
+                                                    $t(
                                                         `home.features.${feature.key}.title`
                                                     )
                                                 }}
                                             </v-card-title>
                                             <v-card-text>
                                                 {{
-                                                    t(
+                                                    $t(
                                                         `home.features.${feature.key}.description`
                                                     )
                                                 }}
@@ -172,7 +169,7 @@ const features = [
             <v-row justify="center">
                 <v-col cols="12" md="8" lg="6">
                     <h2 class="text-h4 text-center section-title">
-                        {{ t('home.contact.title') }}
+                        {{ $t('home.contact.title') }}
                     </h2>
                     <v-card class="bg-surface">
                         <v-card-text>
@@ -184,7 +181,7 @@ const features = [
                                     color="primary"
                                 ></v-icon>
                                 <span class="text-body-1">{{
-                                    t('home.contact.discord')
+                                    $t('home.contact.discord')
                                 }}</span>
                             </div>
                             <div class="d-flex align-center">
@@ -195,7 +192,7 @@ const features = [
                                     color="primary"
                                 ></v-icon>
                                 <span class="text-body-1">{{
-                                    t('home.contact.email')
+                                    $t('home.contact.email')
                                 }}</span>
                             </div>
                         </v-card-text>
