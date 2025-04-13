@@ -74,9 +74,4 @@ const app = createApp(App);
 app.use(i18n);
 app.use(vuetify);
 app.use(router);
-
-// デバッグ用ログ - 本番環境でも有効
-console.log('Current locale:', i18n.global.locale);
-console.log('Sample translation test:', i18n.global.t('nav.home'));
-
 app.mount('#app');

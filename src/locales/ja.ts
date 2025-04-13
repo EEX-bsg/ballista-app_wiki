@@ -55,7 +55,7 @@ export default {
         contact: {
             title: 'お問い合わせ',
             discord: 'Discord: eex_slime',
-            email: 'Email: exe.ndra314@gmail.com',
+            email: "Email: exe.ndra314{'@'}gmail.com",
         },
     },
     footer: {
