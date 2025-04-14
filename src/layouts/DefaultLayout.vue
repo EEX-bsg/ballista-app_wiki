@@ -104,6 +104,9 @@ const toggleLocale = () => {
                 <p class="mb-0">{{ t('footer.copyright') }}</p>
                 <p class="mb-0 text-caption">{{ t('footer.developedBy') }}</p>
                 <p class="mb-0 text-caption">{{ t('footer.besiegeCopyright') }}</p>
+                <router-link to="/transaction-law" class="text-decoration-none">
+                    <p class="mb-0 text-caption">特定商取引法に関する表記</p>
+                </router-link>
             </div>
         </v-footer>
     </v-app>
